@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"os"
 )
 
 var errInvalidIP = errors.New("invalid IP address")
@@ -93,6 +94,9 @@ func main() {
 	}
 
 	if *exclusive {
+		if end == 0 {
+			os.Exit(0)
+		}
 		end--
 	}
 
